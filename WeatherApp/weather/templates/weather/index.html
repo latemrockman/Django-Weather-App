@@ -19,44 +19,49 @@
       </nav>
     </div>
 
-    <div class="container">
-        <h1>Погода в Вашем городе</h1>
-        <div class="row">
-            <div class="row">
-                <div class="col-5 offset-1">
-                    <form action="">
-                        <label for="city">Город</label>
-                        <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
-                        <input type="submit" name="send" value="Добавить" class="btn btn-danger">
-                    </form>
-
-                </div>
-                <div class="col-4 offset-1">
-                    <h1>Информаиця</h1>
 
 
-                    {% for info in all_info %}
+<div class="container">
+    <div class="row">
+        <div class="col-5 offset-1">
+            <h1>Погода в Вашем городе</h1>
+            <from action="" method="post">
+                {% csrf_token %}
+                <label for="city"></label>
+                {{form.name}}
+                <input type="submit" name="send" value="Добавить" class="mt-2 btn btn-danger">
+            </from>
+        </div>
 
+        <div class="col-4 offset-1">
+            <h1>Информаиця</h1>
+            <label for="city"></label>
 
-                    <div class="alert alert-info">
-                        <div class="row">
-                            <div class="col-9">
-                                <b>Город:</b> {{info.city}} <br>
-                                <b>Температура:</b> {{info.temp}} <sup>o</sup>
-                            </div>
-                            <div class="col-2" offset-1>
-                                <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
-                            </div>
-                        </div>
+            {% for info in all_info %}
+            <div class="alert alert-info">
+                <div class="row">
+                    <div class="col-9">
+                        <b>Город:</b> {{info.city}} <br>
+                        <b>Температура:</b> {{info.temp}} <sup>o</sup>
                     </div>
 
-                    {% endfor %}
-
-
-
+                    <div class="col-2" offset-2>
+                        <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
+                    </div>
+                </div>
             </div>
+            {% endfor %}
+
         </div>
     </div>
+</div>
+
+
+
+
+
+
+
 
 
 
