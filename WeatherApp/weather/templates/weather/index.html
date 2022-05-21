@@ -33,17 +33,27 @@
                 </div>
                 <div class="col-4 offset-1">
                     <h1>Информаиця</h1>
+
+
+                    {% for info in all_info %}
+
+
                     <div class="alert alert-info">
                         <div class="row">
                             <div class="col-9">
                                 <b>Город:</b> {{info.city}} <br>
                                 <b>Температура:</b> {{info.temp}} <sup>o</sup>
                             </div>
-                        <div class="col-2" offset-1>
-                            <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
+                            <div class="col-2" offset-1>
+                                <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    {% endfor %}
+
+
+
             </div>
         </div>
     </div>
