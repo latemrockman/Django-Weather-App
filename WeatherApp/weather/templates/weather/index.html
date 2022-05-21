@@ -9,7 +9,7 @@
 
     <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <span class="fs-4">Погодное приложение</span>
+        <span class="fs-4"><b>Погодное приложение</b></span>
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
@@ -33,15 +33,19 @@
                 </div>
                 <div class="col-4 offset-1">
                     <h1>Информаиця</h1>
-                    <div class="alert alert-danger">
-                        <b>Город:</b> {{info.city}} <br>
-                        <b>Температура:</b> {{info.temp}} <sup>o</sup><br>
-                        <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
+                    <div class="alert alert-info">
+                        <div class="row">
+                            <div class="col-9">
+                                <b>Город:</b> {{info.city}} <br>
+                                <b>Температура:</b> {{info.temp}} <sup>o</sup>
+                            </div>
+                        <div class="col-2" offset-1>
+                            <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img-thumbnail">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 
