@@ -1,7 +1,10 @@
 import requests
-from django.shortcuts import render
+from django.urls import reverse
+from django.shortcuts import render, redirect
 from .models import City
 from .forms import CityForm
+
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 
 # Create your views here.
 
@@ -25,10 +28,15 @@ def sort_info_by_temp(all_cities):
 
 def index(request):
     appid = '6a4f0328eeef57b74e12b8438db06807'
+    print('!!!!!!!!!!!!!!!')
+    #a = City(name='Toronto')
+    #a.save()
 
-    if (request.method == 'POST'):
+    if request.method == 'POST':
+        print('@@@@@@@@@@@@@@@@@@@@')
         form = CityForm(request.POST)
         form.save()
+        return redirect('index')
 
     form = CityForm()
 
@@ -55,3 +63,8 @@ def index(request):
     }
 
     return render(request, 'weather/index.html', context)
+
+def add_city(request):
+    print('333333333333333333555555555555555555')
+    #return render(request, 'weather/index.html', {})
+    #return render(request, 'weather/index.html', {})

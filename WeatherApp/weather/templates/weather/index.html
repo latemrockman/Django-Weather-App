@@ -22,19 +22,30 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-5 offset-1">
+        <div class="col-5">
             <h1>Погода в Вашем городе</h1>
-            <from action="" method="post">
+
+            <br>
+
+
+            <form method="post" acion="">
                 {% csrf_token %}
-                <label for="city"></label>
                 {{form.name}}
-                <input type="submit" name="send" value="Добавить" class="mt-2 btn btn-danger">
-            </from>
+                <br>
+
+                <button type="submit" class="btn btn-danger">Добавить</button>
+            </form>
+
+
+
+
         </div>
 
         <div class="col-4 offset-1">
-            <h1>Информаиця</h1>
-            <label for="city"></label>
+            <h1>Информация</h1>
+
+            <br>
+
 
             {% for info in all_info %}
             <div class="alert alert-info">
